@@ -425,13 +425,13 @@ function PrinterConnection()
             let socketHost=socketUrl.host;
             if ("WebSocket" in window)
             {
-                let socketUrl = "ws://"+socketHost+"/websocket"+"?token="+result
+                let socketUrl = "wss://"+socketHost+"/websocket"+"?token="+result
                 printerConnection.addLog("SocketURL:"+socketUrl)
                 var ws = new WebSocket(socketUrl);
                 ws.onopen = function()
                 {
                     
-                    printerConnection.addLog("Connected to Moonraker on:ws://"+socketHost)
+                    printerConnection.addLog("Connected to Moonraker on:wss://"+socketHost)
 
                     printerConnection.curPrinterState.connected=true;
 
